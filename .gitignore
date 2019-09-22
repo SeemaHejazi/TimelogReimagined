@@ -31,7 +31,9 @@ public/.DS_Store
 /public/.DS_Store
 /.idea
 .idea/
+.idea/*
 _ide_helper.php
 _ide_helper_models.php
 .jshintrc
 .phpstorm.meta.php
+.idea/workspace.xml
