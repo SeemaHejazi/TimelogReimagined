@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Validator;
-use App\Models\Center;
+use App\Models\Centre;
 use Illuminate\Http\Request;
 
-class CenterController extends Controller {
+class CentreController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $centers = Center::order_by('center_name', 'asc')->get();
+        $centres = Centre::order_by('centre_name', 'asc')->get();
 
 //        return view('', compact('centers'));
     }
@@ -35,7 +35,7 @@ class CenterController extends Controller {
      */
     public function store(Request $request) {
         $validator = Validator::make($request->all(), [
-            'center_name' => 'required|max:255',
+            'centre_name' => 'required|max:255',
             'location'    => 'required|max:255',
             'timezone'    => 'required|max:255',
         ]);
@@ -44,14 +44,14 @@ class CenterController extends Controller {
             return back()->withErrors($validator)->withInput();
         }
 
-        $center = new Center;
-        $center->center_name = $request->center_name;
-        $center->location = $request->location;
-        $center->timezone = $request->timezone;
+        $centre = new Centre;
+        $centre->centre_name = $request->centre_name;
+        $centre->location = $request->location;
+        $centre->timezone = $request->timezone;
 
-        $center->save();
+        $centre->save();
 
-        return back()->with('success', '<strong>Success!</strong> You have successfully stored a center');
+        return back()->with('success', '<strong>Success!</strong> You have successfully stored a centre');
     }
 
     /**

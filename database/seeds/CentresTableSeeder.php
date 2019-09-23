@@ -1,37 +1,37 @@
 <?php
 
-use App\Models\Center;
+use App\Models\Centre;
 use Illuminate\Database\Seeder;
 
-class CentersTableSeeder extends Seeder {
+class CentresTableSeeder extends Seeder {
     /**
      * Run the database seeds.
      *
      * @return void
      */
     public function run() {
-        $center = new Center([
-            'center_name' => 'North Shore Daycare',
+        $centre = new Centre([
+            'centre_name' => 'North Shore Daycare',
             'location' => '123 Evanston St, Evanston, Illinois',
             'timezone' => 'America/Chicago'
         ]);
 
-        $center->save();
+        $centre->save();
 
-        $center = new Center([
-            'center_name' => 'Horace Green Daycare',
+        $centre = new Centre([
+            'centre_name' => 'Horace Green Daycare',
             'location' => '123 Staten Island St, Staten Island, New York',
             'timezone' => 'America/New_York'
         ]);
 
-        $center->save();
+        $centre->save();
 
-        $center = new Center([
-            'center_name' => 'John Adams Daycare',
+        $centre = new Centre([
+            'centre_name' => 'John Adams Daycare',
             'location' => '123 Philly St, Philadelphia, Pennsylvania',
             'timezone' => 'America/Toronto'
         ]);
 
-        $center->save();
+        $centre->save();
     }
 }

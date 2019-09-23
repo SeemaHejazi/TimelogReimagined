@@ -8,26 +8,26 @@ use Illuminate\Database\Eloquent\Builder;
 
 
 /**
- * App\Models\UserCenter
+ * App\Models\UserCentre
  *
  * @property int $user_id
- * @property int $center_id
- * @property-read \App\Models\Center $center
+ * @property int $centre_id
+ * @property-read \App\Models\Centre $centre
  * @property-read \App\Models\User $user
- * @method static Builder|\App\Models\UserCenter newModelQuery()
- * @method static Builder|\App\Models\UserCenter newQuery()
- * @method static Builder|\App\Models\UserCenter query()
- * @method static Builder|\App\Models\UserCenter whereCenterId($value)
- * @method static Builder|\App\Models\UserCenter whereUserId($value)
+ * @method static Builder|\App\Models\UserCentre newModelQuery()
+ * @method static Builder|\App\Models\UserCentre newQuery()
+ * @method static Builder|\App\Models\UserCentre query()
+ * @method static Builder|\App\Models\UserCentre whereCenterId($value)
+ * @method static Builder|\App\Models\UserCentre whereUserId($value)
  * @mixin \Eloquent
  */
-class UserCenter extends Model {
+class UserCentre extends Model {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'user_centers';
+    protected $table = 'user_centres';
 
     /**
      * No timestamp attributes.
@@ -46,7 +46,7 @@ class UserCenter extends Model {
     /**
      * Indicates model primary keys.
      */
-    protected $primaryKey = ['user_id', 'center_id'];
+    protected $primaryKey = ['user_id', 'centre_id'];
 
     /**
      * The attributes that are mass assignable.
@@ -54,7 +54,7 @@ class UserCenter extends Model {
      * @var array
      */
     protected $fillable = [
-        'user_id', 'center_id',
+        'user_id', 'centre_id',
     ];
 
     /**
@@ -69,9 +69,9 @@ class UserCenter extends Model {
     /**
      *  A dealer_rep_dealerships is associated with a dealership
      *
-     * @return BelongsTo|Center
+     * @return BelongsTo|Centre
      */
-    public function center() {
-        return $this->belongsTo('App\Models\Center', 'center_id');
+    public function centre() {
+        return $this->belongsTo('App\Models\Centre', 'centre_id');
     }
 }

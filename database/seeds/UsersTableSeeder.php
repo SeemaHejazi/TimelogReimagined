@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Center;
+use App\Models\Centre;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\UserCenter;
+use App\Models\UserCentre;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -18,9 +18,9 @@ class UsersTableSeeder extends Seeder {
         $adminRole = Role::whereName('admin')->first();
         $teacherRole = Role::whereName('teacher')->first();
 
-        $northshore = Center::whereCenterName('North Shore Daycare')->first();
-        $horacegreen = Center::whereCenterName('Horace Green Daycare')->first();
-        $johnadams = Center::whereCenterName('John Adams Daycare')->first();
+        $northshore = Centre::whereCentreName('North Shore Daycare')->first();
+        $horacegreen = Centre::whereCentreName('Horace Green Daycare')->first();
+        $johnadams = Centre::whereCentreName('John Adams Daycare')->first();
 
         $user = new User([
             'username' => 'SuperAdmin',
@@ -45,11 +45,11 @@ class UsersTableSeeder extends Seeder {
         ]);
         $user->save();
 
-        $user_center = new UserCenter([
+        $user_centre = new UserCentre([
             'user_id' => $user->id,
-            'center_id' => $northshore->id
+            'centre_id' => $northshore->id
         ]);
-        $user_center->save();
+        $user_centre->save();
 
         $user = new User([
             'username' => 'snorbury',
@@ -62,11 +62,11 @@ class UsersTableSeeder extends Seeder {
         ]);
         $user->save();
 
-        $user_center = new UserCenter([
+        $user_centre = new UserCentre([
             'user_id' => $user->id,
-            'center_id' => $northshore->id
+            'centre_id' => $northshore->id
         ]);
-        $user_center->save();
+        $user_centre->save();
 
         $user = new User([
             'username' => 'rmullins',
@@ -79,11 +79,11 @@ class UsersTableSeeder extends Seeder {
         ]);
         $user->save();
 
-        $user_center = new UserCenter([
+        $user_centre = new UserCentre([
             'user_id' => $user->id,
-            'center_id' => $horacegreen->id
+            'centre_id' => $horacegreen->id
         ]);
-        $user_center->save();
+        $user_centre->save();
 
         $user = new User([
             'username' => 'nschneebly',
@@ -96,11 +96,11 @@ class UsersTableSeeder extends Seeder {
         ]);
         $user->save();
 
-        $user_center = new UserCenter([
+        $user_centre = new UserCentre([
             'user_id' => $user->id,
-            'center_id' => $horacegreen->id
+            'centre_id' => $horacegreen->id
         ]);
-        $user_center->save();
+        $user_centre->save();
 
         $user = new User([
             'username' => 'gfeeny',
@@ -113,11 +113,11 @@ class UsersTableSeeder extends Seeder {
         ]);
         $user->save();
 
-        $user_center = new UserCenter([
+        $user_centre = new UserCentre([
             'user_id' => $user->id,
-            'center_id' => $johnadams->id
+            'centre_id' => $johnadams->id
         ]);
-        $user_center->save();
+        $user_centre->save();
 
         $user = new User([
             'username' => 'jturner',
@@ -130,10 +130,10 @@ class UsersTableSeeder extends Seeder {
         ]);
         $user->save();
 
-        $user_center = new UserCenter([
+        $user_centre = new UserCentre([
             'user_id' => $user->id,
-            'center_id' => $johnadams->id
+            'centre_id' => $johnadams->id
         ]);
-        $user_center->save();
+        $user_centre->save();
     }
 }

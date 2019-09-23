@@ -23,8 +23,8 @@ use Illuminate\Database\Eloquent\Collection;
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read Collection|\App\Models\Center[] $centers
- * @property-read int|null $centers_count
+ * @property-read Collection|\App\Models\Centre[] $centres
+ * @property-read int|null $centres_count
  * @property-read string $name
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
@@ -91,25 +91,25 @@ class User extends Authenticatable {
     }
 
     /**
-     * Each user belongs to a user_center association
+     * Each user belongs to a user_centre association
      *
-     * @return BelongsTo|UserCenter
+     * @return BelongsTo|UserCentre
      */
-    public function user_center() {
-        return $this->belongsTo('App\Models\UserCenter');
+    public function user_centre() {
+        return $this->belongsTo('App\Models\UserCentre');
     }
 
     /**
-     * Get the centers with this user through the user_center association
+     * Get the centres with this user through the user_centre association
      *
-     * @return HasManyThrough|Center[]
+     * @return HasManyThrough|Centre[]
      */
-    public function centers() {
-        return $this->hasManyThrough('App\Models\Center', 'App\Models\UserCenter',
+    public function centres() {
+        return $this->hasManyThrough('App\Models\Centre', 'App\Models\UserCentre',
             'user_id',
             'id',
             'id',
-            'center_id');
+            'centre_id');
     }
 
     /**

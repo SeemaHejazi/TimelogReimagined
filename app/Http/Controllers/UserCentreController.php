@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Center;
+use App\Models\Centre;
 use App\Models\User;
-use App\Models\UserCenter;
+use App\Models\UserCentre;
 use Illuminate\Http\Request;
 
-class UserCenterController extends Controller {
+class UserCentreController extends Controller {
     /**
      * Display a listing of the resource.
      *
@@ -30,23 +30,23 @@ class UserCenterController extends Controller {
      * Store a newly created resource in storage.
      *
      * @param  User $user_id
-     * @return Center $center_id
+     * @return Centre $centre_id
      */
     public function store(
         $user_id,
-        $center_id
+        $centre_id
     ) {
-        $user_center = UserCenter::where('user_id', $user_id)
-            ->where('center_id', $center_id)
+        $user_centre = UserCentre::where('user_id', $user_id)
+            ->where('centre_id', $centre_id)
             ->first();
 
-        if (isset($user_center)) {
+        if (isset($user_centre)) {
             return 'error';
         }
 
-        $match = new UserCenter([
+        $match = new UserCentre([
             'user_id'   => $user_id,
-            'center_id' => $center_id,
+            'centre_id' => $centre_id,
         ]);
 
         $match->save();
@@ -88,21 +88,21 @@ class UserCenterController extends Controller {
     /**
      * Remove the specified resource from storage.
      * @param  User $user_id
-     * @return Center $center_id
+     * @return Centre $centre_id
      */
     public function destroy(
         $user_id,
-        $center_id
+        $centre_id
     ) {
-        $user_center = UserCenter::where('user_id', $user_id)
-            ->where('center_id', $center_id)
+        $user_centre = UserCentre::where('user_id', $user_id)
+            ->where('centre_id', $centre_id)
             ->first();
 
-        if (!isset($user_center)) {
+        if (!isset($user_centre)) {
             return 'error';
         }
 
-        $user_center->delete();
+        $user_centre->delete();
         return 'successfully deleted';
     }
 }

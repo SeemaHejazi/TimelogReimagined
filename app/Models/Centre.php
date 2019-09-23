@@ -10,30 +10,30 @@ use Illuminate\Database\Eloquent\Collection;
 
 
 /**
- * App\Models\Center
+ * App\Models\Centre
  *
  * @property int $id
- * @property string $center_name
+ * @property string $centre_name
  * @property string $location
  * @property string $timezone
  * @property-read Collection|\App\Models\User[] $users
  * @property-read int|null $users_count
- * @method static Builder|\App\Models\Center newModelQuery()
- * @method static Builder|\App\Models\Center newQuery()
- * @method static Builder|\App\Models\Center query()
- * @method static Builder|\App\Models\Center whereCenterName($value)
- * @method static Builder|\App\Models\Center whereId($value)
- * @method static Builder|\App\Models\Center whereLocation($value)
- * @method static Builder|\App\Models\Center whereTimezone($value)
+ * @method static Builder|\App\Models\Centre newModelQuery()
+ * @method static Builder|\App\Models\Centre newQuery()
+ * @method static Builder|\App\Models\Centre query()
+ * @method static Builder|\App\Models\Centre whereCentreName($value)
+ * @method static Builder|\App\Models\Centre whereId($value)
+ * @method static Builder|\App\Models\Centre whereLocation($value)
+ * @method static Builder|\App\Models\Centre whereTimezone($value)
  * @mixin \Eloquent
  */
-class Center extends Model {
+class Centre extends Model {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'centers';
+    protected $table = 'centres';
 
     /**
      * No timestamp attributes.
@@ -48,26 +48,26 @@ class Center extends Model {
      * @var array
      */
     protected $fillable = [
-        'center_name', 'location'
+        'centre_name', 'location'
     ];
 
     /**
-     * Center is associated with
+     * Centre is associated with
      *
-     * @return BelongsTo|UserCenter
+     * @return BelongsTo|UserCentre
      */
-    public function user_center() {
-        return $this->belongsTo('App\Models\UserCenter');
+    public function user_centre() {
+        return $this->belongsTo('App\Models\UserCentre');
     }
 
     /**
-     * Get the users associated with a centers
+     * Get the users associated with a centres
      *
      * @return HasManyThrough|User[]
      */
     public function users() {
-        return $this->hasManyThrough('App\Models\User', 'App\Models\UserCenter',
-            'center_id',
+        return $this->hasManyThrough('App\Models\User', 'App\Models\UserCentre',
+            'centre_id',
             'id',
             'id',
             'user_id');
