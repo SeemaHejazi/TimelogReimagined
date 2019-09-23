@@ -9,9 +9,20 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
+
 /**
  * App\Models\User
  *
+ * @property int $id
+ * @property string $username
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $email
+ * @property int $role_id
+ * @property string $password
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read Collection|\App\Models\Center[] $centers
  * @property-read int|null $centers_count
  * @property-read string $name
@@ -21,6 +32,16 @@ use Illuminate\Database\Eloquent\Collection;
  * @method static Builder|\App\Models\User newModelQuery()
  * @method static Builder|\App\Models\User newQuery()
  * @method static Builder|\App\Models\User query()
+ * @method static Builder|\App\Models\User whereCreatedAt($value)
+ * @method static Builder|\App\Models\User whereEmail($value)
+ * @method static Builder|\App\Models\User whereFirstName($value)
+ * @method static Builder|\App\Models\User whereId($value)
+ * @method static Builder|\App\Models\User whereLastName($value)
+ * @method static Builder|\App\Models\User wherePassword($value)
+ * @method static Builder|\App\Models\User whereRememberToken($value)
+ * @method static Builder|\App\Models\User whereRoleId($value)
+ * @method static Builder|\App\Models\User whereUpdatedAt($value)
+ * @method static Builder|\App\Models\User whereUsername($value)
  * @mixin \Eloquent
  */
 class User extends Authenticatable {
@@ -69,14 +90,14 @@ class User extends Authenticatable {
         return $this->belongsTo('App\Models\Role', 'role_id');
     }
 
-//    /**
-//     * Each user belongs to a user_center association
-//     *
-//     * @return BelongsTo|UserCenter
-//     */
-//    public function user_center() {
-//        return $this->belongsTo('App\Models\UserCenter');
-//    }
+    /**
+     * Each user belongs to a user_center association
+     *
+     * @return BelongsTo|UserCenter
+     */
+    public function user_center() {
+        return $this->belongsTo('App\Models\UserCenter');
+    }
 
     /**
      * Get the centers with this user through the user_center association
@@ -97,6 +118,6 @@ class User extends Authenticatable {
      * @return bool
      */
     public function isAdmin() {
-        return null !== $this->role()->whereName('admin')->orWhereName('super-admin')->first();
+        return null !== $this->role()->where('name', 'admin')->orWhere('name', 'super-admin')->first();
     }
 }

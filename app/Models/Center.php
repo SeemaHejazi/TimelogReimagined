@@ -8,14 +8,23 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Collection;
 
+
 /**
  * App\Models\Center
  *
+ * @property int $id
+ * @property string $center_name
+ * @property string $location
+ * @property string $timezone
  * @property-read Collection|\App\Models\User[] $users
  * @property-read int|null $users_count
  * @method static Builder|\App\Models\Center newModelQuery()
  * @method static Builder|\App\Models\Center newQuery()
  * @method static Builder|\App\Models\Center query()
+ * @method static Builder|\App\Models\Center whereCenterName($value)
+ * @method static Builder|\App\Models\Center whereId($value)
+ * @method static Builder|\App\Models\Center whereLocation($value)
+ * @method static Builder|\App\Models\Center whereTimezone($value)
  * @mixin \Eloquent
  */
 class Center extends Model {
@@ -42,14 +51,14 @@ class Center extends Model {
         'center_name', 'location'
     ];
 
-//    /**
-//     * Center is associated with
-//     *
-//     * @return BelongsTo|UserCenter
-//     */
-//    public function user_center() {
-//        return $this->belongsTo('App\Models\UserCenter');
-//    }
+    /**
+     * Center is associated with
+     *
+     * @return BelongsTo|UserCenter
+     */
+    public function user_center() {
+        return $this->belongsTo('App\Models\UserCenter');
+    }
 
     /**
      * Get the users associated with a centers

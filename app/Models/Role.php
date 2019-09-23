@@ -7,14 +7,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
+
 /**
  * App\Models\Role
  *
+ * @property int $id
+ * @property string $name
  * @property-read Collection|\App\Models\User[] $users
  * @property-read int|null $users_count
  * @method static Builder|\App\Models\Role newModelQuery()
  * @method static Builder|\App\Models\Role newQuery()
  * @method static Builder|\App\Models\Role query()
+ * @method static Builder|\App\Models\Role whereId($value)
+ * @method static Builder|\App\Models\Role whereName($value)
  * @mixin \Eloquent
  */
 class Role extends Model {

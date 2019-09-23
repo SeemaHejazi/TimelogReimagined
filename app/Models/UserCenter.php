@@ -6,14 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Builder;
 
+
 /**
  * App\Models\UserCenter
  *
+ * @property int $user_id
+ * @property int $center_id
  * @property-read \App\Models\Center $center
  * @property-read \App\Models\User $user
  * @method static Builder|\App\Models\UserCenter newModelQuery()
  * @method static Builder|\App\Models\UserCenter newQuery()
  * @method static Builder|\App\Models\UserCenter query()
+ * @method static Builder|\App\Models\UserCenter whereCenterId($value)
+ * @method static Builder|\App\Models\UserCenter whereUserId($value)
  * @mixin \Eloquent
  */
 class UserCenter extends Model {
