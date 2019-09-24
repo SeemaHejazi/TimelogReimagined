@@ -14,14 +14,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $isAdmin = Auth::user()->isAdmin();
-
-        if (!$isAdmin) {
-            return redirect('/teacher-dashboard');
-        }
-
-        // Todo: list users
-//        return view('', compact(''));
+        //
     }
 
     /**
@@ -67,7 +60,7 @@ class UserController extends Controller {
         $user->save();
 
         // Todo: fill this
-//        return redirect('')->with('success', 'User saved!');
+//        return back()->with('success', 'User saved!');
     }
 
     /**
@@ -146,6 +139,6 @@ class UserController extends Controller {
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/admin-dashboard.blade.php')->with('success', 'User deleted!');
+        return back()->with('success', 'User deleted!');
     }
 }

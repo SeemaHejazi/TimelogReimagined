@@ -15,4 +15,9 @@ $(document).ready(() => {
         $(event.currentTarget).addClass('active');
         event.preventDefault();
     });
+
+    // Input radio-group visual controls
+    $('.radio-group label').click((event) => {
+        $(event.currentTarget).addClass('active').siblings().removeClass('active');
+    });
 });

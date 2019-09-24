@@ -95,7 +95,6 @@ class Entry extends Model {
         return $this->belongsTo('App\Models\Centre');
     }
 
-
     public function getTotalHoursAttribute() {
         return $this->total / 3600;
     }
@@ -107,6 +106,10 @@ class Entry extends Model {
     }
 
     public function getOutTimeAttribute($utc) {
+        if ($utc == null) {
+            return $utc;
+        }
+
         $timezone =$this->centre->timezone;
 
         return Carbon::createFromTimestamp($utc, $timezone)->format('M d, y h:i A');

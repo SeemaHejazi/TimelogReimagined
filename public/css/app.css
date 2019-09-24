@@ -10704,7 +10704,7 @@ h6 {
   text-align: center;
 }
 
-.button-holder .button[type="submit"] {
+.button-holder .button {
   border-radius: 0;
   font-family: "Open Sans", Verdana, sans-serif;
   font-weight: 600 !important;
@@ -10723,7 +10723,7 @@ h6 {
   height: auto;
 }
 
-.button-holder .button[type="submit"]:hover {
+.button-holder .button:hover {
   background-color: #79be43;
   color: #fff;
   cursor: pointer;

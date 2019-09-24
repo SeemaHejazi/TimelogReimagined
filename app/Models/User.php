@@ -97,7 +97,7 @@ class User extends Authenticatable {
      * @return BelongsTo|UserCentre
      */
     public function user_centre() {
-        return $this->belongsTo('App\Models\UserCentre');
+        return $this->belongsTo('App\Models\UserCentre', 'id', 'user_id', 'centre_id');
     }
 
     /**

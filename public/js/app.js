@@ -19152,6 +19152,10 @@ $(document).ready(function () {
     $('#login-form-link').removeClass('active');
     $(event.currentTarget).addClass('active');
     event.preventDefault();
+  }); // Input radio-group visual controls
+
+  $('.radio-group label').click(function (event) {
+    $(event.currentTarget).addClass('active').siblings().removeClass('active');
   });
 });
 

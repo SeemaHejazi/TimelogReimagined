@@ -57,7 +57,7 @@ class Centre extends Model {
      * @return BelongsTo|UserCentre
      */
     public function user_centre() {
-        return $this->belongsTo('App\Models\UserCentre');
+        return $this->belongsTo('App\Models\UserCentre', 'centre_id');
     }
 
     /**
