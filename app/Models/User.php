@@ -8,43 +8,28 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-
+use Illuminate\Notifications\DatabaseNotificationCollection;
+use Illuminate\Notifications\DatabaseNotification;
 
 /**
  * App\Models\User
  *
- * @property int
- *               $id
- * @property string
- *               $username
- * @property string
- *               $first_name
- * @property string
- *               $last_name
- * @property string
- *               $email
- * @property int
- *               $role_id
- * @property string
- *               $password
- * @property string|null
- *               $remember_token
- * @property \Illuminate\Support\Carbon|null
- *               $created_at
- * @property \Illuminate\Support\Carbon|null
- *               $updated_at
- * @property-read Collection|\App\Models\Centre[]
- *                    $centres
- * @property-read int|null
- *                    $centres_count
- * @property-read string
- *                    $name
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[]
- *                $notifications
- * @property-read int|null
- *                    $notifications_count
- * @property-read \App\Models\Role
- *                    $role
+ * @property int                                  $id
+ * @property string                               $username
+ * @property string                               $first_name
+ * @property string                               $last_name
+ * @property string                               $email
+ * @property int                                  $role_id
+ * @property string                               $password
+ * @property string|null                          $remember_token
+ * @property \Illuminate\Support\Carbon|null      $created_at
+ * @property \Illuminate\Support\Carbon|null      $updated_at
+ * @property-read Collection|\App\Models\Centre[] $centres
+ * @property-read int|null                        $centres_count
+ * @property-read string                          $name
+ * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
+ * @property-read int|null                        $notifications_count
+ * @property-read \App\Models\Role                $role
  * @method static Builder|\App\Models\User newModelQuery()
  * @method static Builder|\App\Models\User newQuery()
  * @method static Builder|\App\Models\User query()

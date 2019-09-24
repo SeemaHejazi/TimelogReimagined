@@ -11,16 +11,21 @@
 |
 */
 
+//Auth::routes([]);
+
 Route::get('/', function () {
     return view('pages.index');
 });
 
-Route::get('login', 'Auth\LoginController@showUserLoginForm')->name('login.form');
-Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::get('login', 'Auth\LoginController@showUserLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
 
-Route::get('login', 'Auth\LoginController@showUserLoginForm');
-Route::post('register', 'Auth\RegisterController@login')->name('register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard', 'EntryController@index')->name('dashboard');
 //    Route::get('admin-dashboard', 'UserDashboardController@index')->name('dashboard.index');
 });

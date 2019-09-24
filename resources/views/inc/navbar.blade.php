@@ -14,9 +14,27 @@
             <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a class="nav-link" href="/">Clocking in/out</a>
             </li>
-            <li class="nav-item {{ Request::is('login') ? 'active' : '' }}">
-                <a class="nav-link" href="/login">Log in</a>
-            </li>
+            @if (Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard') }}">{{ Auth::user()->name }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link logout" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">Log out</a>
+                </li>
+
+            @else
+                <li class="nav-item {{ Request::is('login') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('login') }}">Log in</a>
+                </li>
+            @endif
         </ul>
+        <form id="logout-form"
+              action="{{ route('logout') }}"
+              method="POST"
+              style="display: none;">
+            @csrf
+        </form>
     </div>
 </nav>

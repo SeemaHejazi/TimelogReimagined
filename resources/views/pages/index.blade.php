@@ -16,6 +16,7 @@
                         <form id="clocking-form" method="POST"
                               {{--action="{{ route('clocking') }}"--}}
                               role="form">
+                            @csrf
                             <div class="input-group">
                                 <div class="icon">
                                     <i class="fas fa-user"></i>

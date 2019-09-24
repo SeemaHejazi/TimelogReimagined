@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entry;
+use App\Models\UserCentre;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,19 @@ class EntryController extends Controller {
      */
     public function index() {
         $self = Auth::user();
+        $isAdmin = $self->hasRole('admin');
+        $isSuperAdmin = $self->hasRole('super-admin');
 
-        $isTeacher = $self->hasRole('teacher');
+        if ($isSuperAdmin) {
+            $entries = Entry::all();
+        } elseif ($isAdmin) {
+            $centre_ids = UserCentre::whereUserId($self->id)->pluck('centre_id')->toArray();
+            $entries = Entry::whereIn('centre_id', $centre_ids)->get();
+        } else {
+            $entries = Entry::whereUserId($self->id)->get();
+        }
+
+        return view('pages.dashboard', compact('entries'));
     }
 
     /**
