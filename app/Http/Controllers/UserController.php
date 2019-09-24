@@ -73,12 +73,12 @@ class UserController extends Controller {
         $isAdmin = Auth::user()->isAdmin();
 
         if (!$isAdmin) {
-            return redirect('/teacher-dashboard');
+            return redirect('/dashboard');
         }
 
         $user = User::find($id);
         if (!$user) {
-            return redirect('/admin-dashboard.blade.php');
+            return redirect('/dashboard');
         }
 
         // Todo: where from here

@@ -96,7 +96,7 @@ class Entry extends Model {
     }
 
     public function getTotalHoursAttribute() {
-        return $this->total / 3600;
+        return gmdate('h : i', $this->total);
     }
 
     public function getInTimeAttribute($utc) {
