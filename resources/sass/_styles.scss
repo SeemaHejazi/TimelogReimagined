@@ -1,0 +1,134 @@
+body {
+  background-color: $primary-bg-color;
+  color: $primary-font-color;
+  font-family: $body-font;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+a {
+  color: $primary-font-color-a;
+  font-size:14px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary-font-color-a-focus;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+.navbar {
+  a {
+    font-weight:700;
+    float: none;
+    padding: 12px 15px 10px !important;
+    text-decoration: none;
+    text-shadow: none;
+  }
+
+  .logo-img {
+    height: 48px;
+    margin: 2px 0 3px;
+  }
+
+  .nav-item.active a {
+    color: $primary-font-color-a-focus;
+  }
+}
+
+.panel-heading {
+  border-bottom: solid 1px $secondary-bg-color;
+}
+
+.tabs,
+.title {
+  text-align: center;
+}
+
+.button-holder {
+  margin: 10px;
+  text-align: center;
+
+  .button[type="submit"] {
+    border-radius: 0;
+    font-family: $body-font;
+    font-weight: 600 !important;
+    padding: 7px 50px 5px 50px;
+    letter-spacing: 0.08em;
+    font-size: 14px;
+    color: $btn-success;
+    cursor: pointer;
+    background-color: $primary-bg-color;
+    display: inline-block;
+    text-transform: uppercase;
+    border: 1px solid $btn-success;
+    float: none;
+    margin: 0 auto 5px auto;
+    width: auto;
+    height: auto;
+
+    &:hover {
+      background-color: $btn-success;
+      color: $primary-bg-color;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.input-group {
+  padding: 10px;
+
+  .icon {
+    background-color: $primary-bg-color;
+    border: 1px solid $btn-success;
+    color: $btn-success;
+    float: left;
+    width: 10%;
+    height: 52px;
+    font-family: $body-font;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    text-align: center;
+    min-width: 43px;
+    padding-top: 14px;
+  }
+
+  .input-field {
+    height: 52px;
+  }
+}
+
+.radio-group label {
+  overflow: hidden;
+}
+
+.radio-group input {
+  /* This is on purpose for accessibility. Using display: hidden is evil.
+  This makes things keyboard friendly right out tha box! */
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: -20px;
+}
+
+.btn-teal {
+  color: $secondary-font-color;
+  background-color: $secondary-bg-color;
+
+  &:hover,
+  &:active,
+  &.active {
+    background-color: $primary-font-color-a-focus;
+    color: $secondary-font-color;
+    cursor: pointer;
+  }
+}

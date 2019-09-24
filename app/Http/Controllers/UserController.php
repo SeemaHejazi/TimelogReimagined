@@ -85,7 +85,7 @@ class UserController extends Controller {
 
         $user = User::find($id);
         if (!$user) {
-            return redirect('/admin-dashboard');
+            return redirect('/admin-dashboard.blade.php');
         }
 
         // Todo: where from here
@@ -146,6 +146,6 @@ class UserController extends Controller {
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/admin-dashboard')->with('success', 'User deleted!');
+        return redirect('/admin-dashboard.blade.php')->with('success', 'User deleted!');
     }
 }

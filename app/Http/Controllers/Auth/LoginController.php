@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -45,6 +46,15 @@ class LoginController extends Controller {
      */
     public function username() {
         return 'username';
+    }
+
+    /**
+     * User Login form
+     *
+     */
+    public function showUserLoginForm() {
+        $roles = Role::all();
+        return view('pages.login', compact('roles'));
     }
 
     /**

@@ -13,22 +13,38 @@ use Illuminate\Database\Eloquent\Collection;
 /**
  * App\Models\User
  *
- * @property int $id
- * @property string $username
- * @property string $first_name
- * @property string $last_name
- * @property string $email
- * @property int $role_id
- * @property string $password
- * @property string|null $remember_token
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read Collection|\App\Models\Centre[] $centres
- * @property-read int|null $centres_count
- * @property-read string $name
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
- * @property-read int|null $notifications_count
- * @property-read \App\Models\Role $role
+ * @property int
+ *               $id
+ * @property string
+ *               $username
+ * @property string
+ *               $first_name
+ * @property string
+ *               $last_name
+ * @property string
+ *               $email
+ * @property int
+ *               $role_id
+ * @property string
+ *               $password
+ * @property string|null
+ *               $remember_token
+ * @property \Illuminate\Support\Carbon|null
+ *               $created_at
+ * @property \Illuminate\Support\Carbon|null
+ *               $updated_at
+ * @property-read Collection|\App\Models\Centre[]
+ *                    $centres
+ * @property-read int|null
+ *                    $centres_count
+ * @property-read string
+ *                    $name
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[]
+ *                $notifications
+ * @property-read int|null
+ *                    $notifications_count
+ * @property-read \App\Models\Role
+ *                    $role
  * @method static Builder|\App\Models\User newModelQuery()
  * @method static Builder|\App\Models\User newQuery()
  * @method static Builder|\App\Models\User query()
@@ -119,5 +135,15 @@ class User extends Authenticatable {
      */
     public function isAdmin() {
         return null !== $this->role()->where('name', 'admin')->orWhere('name', 'super-admin')->first();
+    }
+
+    /**
+     * Check if a user has a specific role
+     *
+     * @param $role
+     * @return bool
+     */
+    public function hasRole($role) {
+        return null !== $this->role()->whereName($role)->first();
     }
 }
