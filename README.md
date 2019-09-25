@@ -43,38 +43,38 @@ password: secret
   - id
   - user_id   (FK: User)
   - centre_id (FK: Centre)
-  - in_time   (bigInt: Unix timestamp secs)   .-- consideration for managing centres across the country... or WORLD
+  - in_time   (bigInt: Unix timestamp secs)   -- consideration for managing centres across the country... or WORLD 
   - out_time  (bigInt: Unix timestamp secs)
   - total     (bigInt: total time worked in secs)
     
 <strong>*Functionality Included:*</strong>  
 
   *User:*  
-    - Create a user > self or by admin
+    - Create a user > self or by admin   
     - Show users (Admin can see all the teachers from their centres, SuperAdmin see ALL)
     
   *Centre:*  
-    - Create a centre
+    - Create a centre   
     - Show centres (Admin can see assigned ones, SuperAdmin see ALL)
     
   *User_Centre:*  
-    - Create a relationship user<->centre
-    - Show relationships user<->centre --view by admin
-    - Update relationships (adding and removing some)
+    - Create a relationship user<->centre  
+    - Show relationships user<->centre --view by admin  
+    - Update relationships (adding and removing some)  
     - Deleting relationships
     
   *Entries:*  
-    - Clock-in: Create a new entry
-    - Clock-out: Update existing entry with an out_time
+    - Clock-in: Create a new entry  
+    - Clock-out: Update existing entry with an out_time  
     - Show entries: Teacher can view all their own, Admin can see all the entries by teachers from their centre, SuperAdmin see ALL.
 
 <strong>*Functionality To Come in due time:*</strong>  
   *User:*  
-    - Update / Delete User
-  *Centre:*  
-    - Update / Delete Centre
+        - Update / Delete User   
+  *Centre:*   
+        - Update / Delete Centre   
   *Entries:*   
-    - Delete entries (maybe someone mistakes?)
+        - Delete entries (maybe someone mistakes?)
 
  
 
