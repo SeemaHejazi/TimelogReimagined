@@ -20,4 +20,17 @@ $(document).ready(() => {
     $('.radio-group label').click((event) => {
         $(event.currentTarget).addClass('active').siblings().removeClass('active');
     });
+
+    $('.table-row').click((event) => {
+        window.document.location = $(event.currentTarget).data("href");
+    });
+
+    // Select all checkboxes
+    $("a[href='#select-all']").click(() => {
+        $('.centre-checkbox').attr('checked', true);
+    });
+    // Deselect all checkboxes
+    $("a[href='#select-none']").click( function() {
+        $('.centre-checkbox').attr('checked', false);
+    });
 });

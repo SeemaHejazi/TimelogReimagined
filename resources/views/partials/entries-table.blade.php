@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -11,7 +11,7 @@
     </thead>
     <tbody id="entries-table" class="entries-table">
     @foreach($entries as $entry)
-        <tr>
+        <tr class="table-row">
             <td>{{ $entry->id }}</td>
             <td class="name">{{ $entry->user->name }}</td>
             <td class="centre">{{ $entry->centre->centre_name }}</td>

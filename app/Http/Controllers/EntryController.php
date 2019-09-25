@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Centre;
+use App\Models\Role;
 use Auth;
 use App\Models\Entry;
 use App\Models\User;
@@ -46,7 +47,14 @@ class EntryController extends Controller {
             $entries = Entry::whereUserId($self->id)->orderBy('in_time', 'desc')->get();
         }
 
-        return view('pages.dashboard', compact('entries', 'users', 'centres'));
+        $roles = Role::where('name', '!=', 'super-admin')->get();
+
+        return view('pages.dashboard', compact(
+            'entries',
+            'users',
+            'centres',
+            'roles'
+        ));
     }
 
     /**

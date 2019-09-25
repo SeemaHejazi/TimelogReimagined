@@ -1,4 +1,4 @@
-<table class="table table-striped table-sm">
+<table class="table table-striped table-hover">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -9,7 +9,7 @@
     </thead>
     <tbody id="centres-table" class="centres-table">
     @foreach($centres as $centre)
-        <tr>
+        <tr class="table-row">
             <td>{{ $centre->id }}</td>
             <td class="name">{{ $centre->name }}</td>
             <td class="location">{{ $centre->location }}</td>

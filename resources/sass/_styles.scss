@@ -10,18 +10,25 @@ body {
 
 a {
   color: $primary-font-color-a;
-  font-size:14px;
+  font-size: 14px;
   text-decoration: none;
 
   &:hover,
   &:focus,
   &:active {
     color: $primary-font-color-a-focus;
+    text-decoration: none;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   font-family: $header-font;
+}
+
+h5 {
+  color: $primary-font-color-a-focus;
+  font-family: $body-font;
+  font-weight: 700;
 }
 
 .navbar {
@@ -53,32 +60,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button-holder {
+  display: flex;
   margin: 10px;
   text-align: center;
 
   .button {
+    background-color: $primary-bg-color;
     border-radius: 0;
-    font-family: $body-font;
-    font-weight: 600 !important;
-    padding: 7px 50px 5px 50px;
-    letter-spacing: 0.08em;
-    font-size: 14px;
+    border: 1px solid $btn-success;
     color: $btn-success;
     cursor: pointer;
-    background-color: $primary-bg-color;
     display: inline-block;
-    text-transform: uppercase;
-    border: 1px solid $btn-success;
     float: none;
-    margin: 0 auto 5px auto;
-    width: auto;
+    font-family: $body-font;
+    font-size: 14px;
+    font-weight: 600 !important;
     height: auto;
+    letter-spacing: 0.08em;
+    margin: 0 auto 5px auto;
+    padding: 7px 50px 5px 50px;
+    text-transform: uppercase;
+    width: auto;
 
     &:hover {
       background-color: $btn-success;
       color: $primary-bg-color;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+    }
+
+    &.cancel-btn {
+      color: $btn-danger;
+      background: $primary-bg-color;
+      border: 1px solid $btn-danger;
+
+      &:hover {
+        background-color: $btn-danger;
+        color: $primary-bg-color;
+      }
     }
   }
 }
@@ -130,5 +149,82 @@ h1, h2, h3, h4, h5, h6 {
     background-color: $primary-font-color-a-focus;
     color: $secondary-font-color;
     cursor: pointer;
+  }
+}
+
+.table-row {
+  cursor: pointer;
+
+  td {
+    padding: 0.35rem;
+  }
+
+  &:hover {
+    font-weight: 600;
+  }
+}
+
+.centres-list {
+  padding-top: 0;
+  width: 100%;
+
+  .centre-checkbox {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $primary-bg-color;
+    border-radius: 50px;
+    border: solid 1px $primary-font-color-h5;
+    color: $primary-font-color-check;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    margin: 0 10px 0 0;
+    outline: none;
+    padding: 0 5px;
+    position: relative;
+    top: 12px;
+    width: 25px;
+
+    &:checked::before {
+      content: '\02143';
+      font: 13px/1 "Open Sans", sans-serif;
+      left: 8px;
+      position: absolute;
+      top: 4px;
+      transform: rotate(40deg);
+    }
+  }
+}
+
+.selectables {
+  width: 100%;
+  margin: 40px 0 20px 0;
+  text-align: center;
+
+  a {
+    color: $primary-font-color-h5;
+    font-family: $body-font;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    line-height: 1.36;
+    margin: 0 20px;
+    padding: 0;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.centre-list-item {
+  display: inline-flex;
+
+  label {
+    margin: 10px 5px auto 0;
+    font-size: 14px;
   }
 }

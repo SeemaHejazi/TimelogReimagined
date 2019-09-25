@@ -14,7 +14,7 @@
                         <h2 class="title">{{ __('Clocking in / out') }}</h2>
 
                         <form id="clocking-form" method="POST"
-                              {{--action="{{ route('clocking') }}"--}}
+                              action="{{ route('entries.store') }}"
                               role="form">
                             @csrf
                             <div class="input-group">

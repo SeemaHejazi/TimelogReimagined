@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Centre;
+use App\Models\UserCentre;
 use Auth;
 use Validator;
 use App\Models\User;
@@ -81,8 +83,21 @@ class UserController extends Controller {
             return redirect('/dashboard');
         }
 
-        // Todo: where from here
-//        return view('', compact('user'));
+        $centre_list = [];
+        $centres = Centre::orderBy('centre_name', 'asc')->get();
+
+        foreach ($centres as $centre) {
+            $user_centre = UserCentre::whereUserId($id)
+                ->where('centre_id', $centre->id)
+                ->first();
+
+            $centre_list[$centre->id] = [
+                $centre->centre_name,
+                isset($user_centre),
+            ];
+        }
+
+        return view('pages.user-show', compact('user', 'centre_list'));
     }
 
     /**

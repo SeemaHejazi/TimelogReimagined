@@ -18,19 +18,19 @@
         @if (Auth::user()->isAdmin())
             <div class="container users">
                 <div class="row">
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="title col-sm-12">
                                 <h2 class="title"> {{ __('Staff List') }}</h2>
-                            </div>
-                            <div class="new-teacher button-holder">
-                                <button class="button"
-                                        data-title="Create"
-                                        data-toggle="modal"
-                                        data-target="#create-teach">
-                                    <span class="fa fa-plus-circle"></span>
-                                    {!! __('New staff member') !!}
-                                </button>
+                                <div class="new-teacher button-holder">
+                                    <button class="button"
+                                            data-title="Create"
+                                            data-toggle="modal"
+                                            data-target="#create-user">
+                                        <span class="fa fa-plus-circle"></span>
+                                        {!! __('New staff member') !!}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -39,19 +39,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="title col-sm-12">
                                 <h2 class="title"> {{ __('Centre List') }}</h2>
-                            </div>
-                            <div class="new-centre button-holder">
-                                <button class="button"
-                                        data-title="Create"
-                                        data-toggle="modal"
-                                        data-target="#create-centre">
-                                    <span class="fa fa-plus-circle"></span>
-                                    {!! __('New centre') !!}
-                                </button>
+
+                                <div class="new-centre button-holder">
+                                    <button class="button"
+                                            data-title="Create"
+                                            data-toggle="modal"
+                                            data-target="#create-centre">
+                                        <span class="fa fa-plus-circle"></span>
+                                        {!! __('New centre') !!}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -76,4 +77,8 @@
             </div>
         </div>
     </div>
+
+@include('modals.create-user')
+@include('modals.create-centre')
+
 @endsection

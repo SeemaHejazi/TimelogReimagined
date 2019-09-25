@@ -77,16 +77,35 @@ class UserCentreController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param  Request $request
+     * @param  User    $user_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
-        //
+    public function update(Request $request, $user_id) {
+        $centres = Centre::orderBy('centre_name', 'asc')->get();
+        $centre_list = [];
+
+        foreach ($centres as $centre) {
+            $centre_list[$centre->id] = $centre->centre_name;
+        }
+
+        $present = $request->except(['_token']);
+        $missing = array_diff($centre_list, $present);
+
+        foreach ($missing as $i => $name) {
+            $this->destroy($user_id, $i);
+        }
+
+        foreach ($present as $i => $name) {
+            $this->store($user_id, $i);
+        }
+
+        return back()->with('success', 'Updated');
     }
 
     /**
      * Remove the specified resource from storage.
+     *
      * @param  User $user_id
      * @return Centre $centre_id
      */

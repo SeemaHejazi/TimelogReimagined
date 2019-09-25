@@ -10662,15 +10662,21 @@ a:hover,
 a:focus,
 a:active {
   color: #108790;
+  text-decoration: none;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
   font-family: "Bree Serif", Georgia, Times, serif;
+}
+
+h5 {
+  color: #108790;
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-weight: 700;
 }
 
 .navbar a {
@@ -10700,27 +10706,28 @@ h6 {
 }
 
 .button-holder {
+  display: flex;
   margin: 10px;
   text-align: center;
 }
 
 .button-holder .button {
+  background-color: #fff;
   border-radius: 0;
-  font-family: "Open Sans", Verdana, sans-serif;
-  font-weight: 600 !important;
-  padding: 7px 50px 5px 50px;
-  letter-spacing: 0.08em;
-  font-size: 14px;
+  border: 1px solid #79be43;
   color: #79be43;
   cursor: pointer;
-  background-color: #fff;
   display: inline-block;
-  text-transform: uppercase;
-  border: 1px solid #79be43;
   float: none;
-  margin: 0 auto 5px auto;
-  width: auto;
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600 !important;
   height: auto;
+  letter-spacing: 0.08em;
+  margin: 0 auto 5px auto;
+  padding: 7px 50px 5px 50px;
+  text-transform: uppercase;
+  width: auto;
 }
 
 .button-holder .button:hover {
@@ -10728,6 +10735,17 @@ h6 {
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+
+.button-holder .button.cancel-btn {
+  color: #be4544;
+  background: #fff;
+  border: 1px solid #be4544;
+}
+
+.button-holder .button.cancel-btn:hover {
+  background-color: #be4544;
+  color: #fff;
 }
 
 .input-group {
@@ -10778,5 +10796,82 @@ h6 {
   background-color: #108790;
   color: #fff;
   cursor: pointer;
+}
+
+.table-row {
+  cursor: pointer;
+}
+
+.table-row td {
+  padding: 0.35rem;
+}
+
+.table-row:hover {
+  font-weight: 600;
+}
+
+.centres-list {
+  padding-top: 0;
+  width: 100%;
+}
+
+.centres-list .centre-checkbox {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 50px;
+  border: solid 1px #989898;
+  color: #666;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 25px;
+  margin: 0 10px 0 0;
+  outline: none;
+  padding: 0 5px;
+  position: relative;
+  top: 12px;
+  width: 25px;
+}
+
+.centres-list .centre-checkbox:checked::before {
+  content: '\2143';
+  font: 13px/1 "Open Sans", sans-serif;
+  left: 8px;
+  position: absolute;
+  top: 4px;
+  transform: rotate(40deg);
+}
+
+.selectables {
+  width: 100%;
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+.selectables a {
+  color: #989898;
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  line-height: 1.36;
+  margin: 0 20px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.selectables a:hover {
+  text-decoration: underline;
+}
+
+.centre-list-item {
+  display: inline-flex;
+}
+
+.centre-list-item label {
+  margin: 10px 5px auto 0;
+  font-size: 14px;
 }
 
