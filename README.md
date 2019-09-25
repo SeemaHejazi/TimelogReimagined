@@ -13,8 +13,8 @@ Feel free to use to view current data:
 <strong> 
 username: SuperAdmin   
 password: secret
-</strong>
-*** or any of the other users seen in the screenshot (passwords are all 'secret')
+</strong>      
+*or any of the other users seen in the screenshot (passwords are all 'secret')*
 
 <strong>Tables include:</strong> 
 
