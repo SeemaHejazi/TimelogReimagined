@@ -9,11 +9,12 @@ The two ways this can be tested is via the site:
         
 or locally, if you feel inclined to clone the repo, install docker, and run docker-compose.
 
-Feel free to use to view current data: 
+Feel free to use to view current data:   
 <strong> 
 username: SuperAdmin   
 password: secret
 </strong>
+*** or any of the other users seen in the screenshot (passwords are all 'secret')
 
 <strong>Tables include:</strong> 
 
