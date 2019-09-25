@@ -36860,11 +36860,11 @@ $(document).ready(function () {
     window.document.location = $(event.currentTarget).data("href");
   }); // Select all checkboxes
 
-  $("a[href='#select-all']").click(function () {
+  $('#select-all').click(function () {
     $('.centre-checkbox').attr('checked', true);
   }); // Deselect all checkboxes
 
-  $("a[href='#select-none']").click(function () {
+  $('#select-none').click(function () {
     $('.centre-checkbox').attr('checked', false);
   });
 });

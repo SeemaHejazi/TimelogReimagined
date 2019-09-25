@@ -26,11 +26,11 @@ $(document).ready(() => {
     });
 
     // Select all checkboxes
-    $("a[href='#select-all']").click(() => {
+    $('#select-all').click(() => {
         $('.centre-checkbox').attr('checked', true);
     });
     // Deselect all checkboxes
-    $("a[href='#select-none']").click( function() {
+    $('#select-none').click(() => {
         $('.centre-checkbox').attr('checked', false);
     });
 });

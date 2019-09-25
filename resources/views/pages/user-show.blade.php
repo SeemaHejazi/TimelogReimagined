@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6 offset-3">
                             <ul class="list-group">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     First Name:
@@ -88,8 +88,8 @@
                                         </div>
                                     @endforeach
                                     <div class="selectables">
-                                        <a rel="group_1" href="#select-all">Select All</a>
-                                        <a rel="group_1" href="#select-none">Deselect All</a>
+                                        <a rel="group_1" id="select-all" href="#">Select All</a>
+                                        <a rel="group_1" id="select-none" href="#">Deselect All</a>
                                     </div>
                                 </div>
 
