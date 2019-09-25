@@ -5,7 +5,7 @@ Using an MVC framework, build a very basic MVP of a clock in/out application, us
 
 I chose to use Laravel 5.8, along with Docker.
 The two ways this can be tested is via the site:  
-        http://159.65.33.134/ (Sorry no domain name yet...)
+        http://timelog.seemahejazi.com  (Redirects to ip...)
         
 or locally, if you feel inclined to clone the repo, install docker, and run docker-compose.
 
