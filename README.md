@@ -56,10 +56,9 @@ I then started thinking about the CRUD functionality for each user, centre and t
     I decided to store the timestamps for entries as unix timestamps to be consider the clock-in and clock-out times of teachers in their own timezones.   
  
 <br>   
-   
-* If you were given another day to work on this, how would you spend it? What if you were
-given a month? *   
-
+      
+*If you were given another day to work on this, how would you spend it? What if you were
+given a month?*   
 <br>    
     *Please also see the 'Functionality To Come in due time' section below.* 
     <br>   
