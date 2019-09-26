@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserCentre;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -76,13 +77,26 @@ class RegisterController extends Controller {
      * @return User
      */
     protected function create(array $data) {
-        return User::create([
+        $user = new User([
             'first_name' => $data['first_name'],
             'last_name'  => $data['last_name'],
-            'username'   => $data['username'],
             'email'      => $data['email'],
+            'username'   => $data['username'],
             'password'   => bcrypt($data['password']),
-            'role_id'    => $data['role_id'] ?: 2
+            'role_id'    => $data['role_id'] ?: 3,
         ]);
+
+        $user->save();
+
+        if ($data['centre_id']) {
+            $user_centre = new UserCentre([
+                'user_id' => $user->id,
+                'centre_id' => $data['centre_id']
+            ]);
+
+            $user_centre->save();
+        }
+
+        return $user;
     }
 }

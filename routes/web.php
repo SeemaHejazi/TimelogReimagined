@@ -37,10 +37,6 @@ Route::group(['middleware' => 'auth'], function () {
     // GET - Display a listing of the resource: must be logged in
     Route::get('dashboard', 'EntryController@index')->name('dashboard');
 
-//    Route::get('users', 'UserController@index')->name('users.index');
-//    Route::get('users/create', 'UserController@create')->name('users.create');
-//    Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
-
     // GET - Display the specified resource
     Route::get('users/{user}', 'UserController@show')->name('users.show');
     // POST - Store a newly created resource in storage
