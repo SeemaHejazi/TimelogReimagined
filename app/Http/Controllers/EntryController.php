@@ -63,7 +63,8 @@ class EntryController extends Controller {
      * @return Response
      */
     public function create() {
-        return view('pages.index');
+        $today_date = Carbon::now()->timezone('America/Toronto')->format('M d, y h:i A') . ' EDT';
+        return view('pages.index', compact('today_date'));
     }
 
     /**
@@ -84,11 +85,16 @@ class EntryController extends Controller {
         $user = User::whereUsername($username)->first();
 
         if (!$user) {
-            return redirect('/')->with('failure', 'The username is not valid');
+            return back()->with('failure', 'The username is not valid! Please ensure that you have an account, 
+            otherwise, please register.')->withInput();
         }
 
         if ($clocking_type == 'out') {
             $entry = Entry::where('user_id', $user->id)->where('out_time', null)->first();
+
+            if (!$entry) {
+                return back()->with('failure', 'You have not clocked in; please clock in before attempting to clock out');
+            }
 
             /** @var Entry $entry */
             return $this->update($request, $entry);

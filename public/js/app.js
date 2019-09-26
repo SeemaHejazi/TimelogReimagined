@@ -36857,7 +36857,7 @@ $(document).ready(function () {
     $(event.currentTarget).addClass('active').siblings().removeClass('active');
   });
   $('.table-row').click(function (event) {
-    window.document.location = $(event.currentTarget).data("href");
+    window.document.location = $(event.currentTarget).data('href');
   }); // Select all checkboxes
 
   $('#select-all').click(function () {

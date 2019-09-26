@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="clockin-page holder" id="clockin">
-        <div class="container">
+        <div class="container-fluid">
             <div class="panel col-sm-12">
                 <div class="panel-heading row">
                     <div class="title">
-                        {{--<h5>{{ $today_date }}</h5>--}}
+                        <h6>{{ $today_date }}</h6>
                     </div>
                 </div>
                 <div class="panel-body row">
@@ -17,6 +17,17 @@
                               action="{{ route('entries.store') }}"
                               role="form">
                             @csrf
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {!! session('success') !!}
+                                </div>
+                            @endif
+                            @if (session('failure'))
+                                <div class="alert alert-danger">
+                                    {!! session('failure') !!}
+                                </div>
+                            @endif
+
                             <div class="input-group">
                                 <div class="icon">
                                     <i class="fas fa-user"></i>

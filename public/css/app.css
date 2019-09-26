@@ -10660,7 +10660,8 @@ a {
 
 a:hover,
 a:focus,
-a:active {
+a:active,
+a.active {
   color: #108790;
   text-decoration: none;
 }
@@ -10674,9 +10675,12 @@ h6 {
 }
 
 h5 {
-  color: #108790;
   font-family: "Open Sans", Verdana, sans-serif;
   font-weight: 700;
+}
+
+h5.category {
+  color: #108790;
 }
 
 .navbar a {
@@ -10694,6 +10698,14 @@ h5 {
 
 .navbar .nav-item.active a {
   color: #108790;
+}
+
+.navbar .custom-toggler.navbar-toggler {
+  border-color: #108790;
+}
+
+.navbar .custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(16,135,144, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .panel-heading {
@@ -10808,6 +10820,10 @@ h5 {
 
 .table-row:hover {
   font-weight: 600;
+}
+
+.table-search-results {
+  display: none;
 }
 
 .centres-list {

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="login-page holder" id="login">
-        <div class="container">
+        <div class="container-fluid">
             <div class="panel panel-login col-sm-12">
                 <div class="panel-heading row">
                     <div class="col-sm-6 tabs">

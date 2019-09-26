@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="holder user-show">
-        <div class="container top">
+        <div class="container-fluid top">
             @if(session('success'))
                 <div class="alert alert-success">
                     {!! session('success') !!}
@@ -16,7 +16,7 @@
             @endif
         </div>
 
-        <div class="container user">
+        <div class="container-fluid user">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 offset-3">
+                        <div class="col-sm-12 col-md-6 offset-md-3">
                             <ul class="list-group">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     First Name:
@@ -62,13 +62,13 @@
                 </div>
             </div>
         </div>
-        <div class="container centres mt-4">
+        <div class="container-fluid centres mt-4">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="title">
-                                <h5>Centres Assigned</h5>
+                                <h5 class="category">Centres Assigned</h5>
                             </div>
                         </div>
                         <div class="col-sm-12">

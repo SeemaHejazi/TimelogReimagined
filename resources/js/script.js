@@ -22,7 +22,7 @@ $(document).ready(() => {
     });
 
     $('.table-row').click((event) => {
-        window.document.location = $(event.currentTarget).data("href");
+        window.document.location = $(event.currentTarget).data('href');
     });
 
     // Select all checkboxes

@@ -61,8 +61,7 @@ class UserController extends Controller {
 
         $user->save();
 
-        // Todo: fill this
-//        return back()->with('success', 'User saved!');
+        return back()->with('success', 'User saved!');
     }
 
     /**

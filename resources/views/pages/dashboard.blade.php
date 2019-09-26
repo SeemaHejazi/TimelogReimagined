@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="holder dashboard">
-        <div class="container top">
+        <div class="container-fluid top">
             @if(session('success'))
                 <div class="alert alert-success">
                     {!! session('success') !!}
@@ -16,7 +16,7 @@
             @endif
         </div>
         @if (Auth::user()->isAdmin())
-            <div class="container users">
+            <div class="container-fluid users">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row">
@@ -64,7 +64,7 @@
                 </div>
             </div>
         @endif
-        <div class="container entries">
+        <div class="container-fluid entries">
             <div class="row">
                 <div class="title col-sm-12">
                     <h2 class="title"> {{ __('Timelog Entries') }}</h2>

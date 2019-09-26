@@ -1,4 +1,4 @@
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-responsive">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -9,10 +9,10 @@
         </tr>
     </thead>
     <tbody id="users-table" class="users-table">
-    @foreach($users as $user)
+    @foreach($users as $index => $user)
         <tr class="table-row" data-href="{{ URL::to('users/' . $user->id) }}">
             <td>
-                {{ $user->id }}
+                {{++$index}}
             </td>
             <td class="name">
                 {{ $user->name }}

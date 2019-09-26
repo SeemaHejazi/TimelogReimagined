@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="title">
-                    <h5>{{ __('Create New User') }}</h5>
+                    <h5 class="category">{{ __('Create New User') }}</h5>
                 </div>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
