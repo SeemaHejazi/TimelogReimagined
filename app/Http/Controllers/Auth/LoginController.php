@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Centre;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -54,7 +55,8 @@ class LoginController extends Controller {
      */
     public function showUserLoginForm() {
         $roles = Role::all();
-        return view('pages.login', compact('roles'));
+        $centres = Centre::all();
+        return view('pages.login', compact('roles', 'centres'));
     }
 
     /**
