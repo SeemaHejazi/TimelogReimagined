@@ -96,6 +96,10 @@ class Entry extends Model {
     }
 
     public function getTotalHoursAttribute() {
+        if ($this->total) {
+            return null;
+        }
+
         return gmdate('h : i', $this->total);
     }
 
