@@ -15,7 +15,8 @@
                 </div>
             @endif
         </div>
-        @if (Auth::user()->isAdmin())
+
+        @if ($isAdmin)
             <div class="container-fluid users">
                 <div class="row">
                     <div class="col-sm-12">

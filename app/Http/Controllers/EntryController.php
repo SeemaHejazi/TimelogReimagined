@@ -48,8 +48,10 @@ class EntryController extends Controller {
         }
 
         $roles = Role::where('name', '!=', 'super-admin')->get();
+        $isAdmin = $isAdmin || $isSuperAdmin;
 
         return view('pages.dashboard', compact(
+            'isAdmin',
             'entries',
             'users',
             'centres',
