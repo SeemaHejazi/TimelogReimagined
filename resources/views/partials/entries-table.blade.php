@@ -11,7 +11,7 @@
     </thead>
     <tbody id="entries-table" class="entries-table">
     @foreach($entries as $entry)
-        <tr class="table-row">
+        <tr class="">
             <td>{{ $entry->id }}</td>
             <td class="name">{{ $entry->user->name }}</td>
             <td class="centre">{{ $entry->centre->centre_name }}</td>

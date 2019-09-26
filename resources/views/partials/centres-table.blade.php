@@ -11,7 +11,7 @@
     @foreach($centres as $centre)
         <tr class="">
             <td>{{ $centre->id }}</td>
-            <td class="name">{{ $centre->name }}</td>
+            <td class="name">{{ $centre->centre_name }}</td>
             <td class="location">{{ $centre->location }}</td>
             <td class="timezone">{{ $centre->timezone }}</td>
         </tr>

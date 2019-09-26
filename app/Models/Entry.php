@@ -96,11 +96,14 @@ class Entry extends Model {
     }
 
     public function getTotalHoursAttribute() {
-        if ($this->total) {
+        if ($this->total == null) {
             return null;
         }
+        if ($this->total < 3600) {
+            return gmdate('i', $this->total) . ' mins';
+        }
 
-        return gmdate('h : i', $this->total);
+        return gmdate('h : i', $this->total) . ' hours';
     }
 
     public function getInTimeAttribute($utc) {
