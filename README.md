@@ -27,8 +27,7 @@ password: secret
 - As a HiMama administrator: I would like to see all the timelogs, by all the teachers, at all of the daycares.  <br>
 <br>
 
-I then started thinking about the CRUD functionality for each user, centre and timelog entry, answering questions such as:
-   
+I then started thinking about the CRUD functionality for each user, centre and timelog entry, answering questions such as:    
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 - How are users created: anyone can create their own accounts, or admin can create accounts for them.  <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,7 +46,7 @@ I then started thinking about the CRUD functionality for each user, centre and t
 <br>
 <br>
     
-* What schema design did you choose and why* <br>
+*What schema design did you choose and why?* <br>
     *Please see the tables structure below.*
 <br>
 &nbsp;&nbsp;&nbsp;
