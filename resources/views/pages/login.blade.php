@@ -208,7 +208,7 @@
                             </div>
                             * A centre must be assigned to begin with
                             <div class="input-group">
-                                <select class="input-field form-control" name="role_id" title="role">
+                                <select class="input-field form-control" name="centre_id" title="centre">
                                     @foreach($centres as $centre)
                                         <option value="{{ $centre->id }}">
                                             {{ $centre->centre_name }}
