@@ -36837,7 +36837,11 @@ if (token) {
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  //Login and Register
+  checkWidth(true);
+  $(window).resize(function () {
+    checkWidth(false);
+  }); //Login and Register
+
   $('#login-form-link').click(function (event) {
     $("#login-form").delay(100).fadeIn(100);
     $("#register-form").fadeOut(100);
@@ -36868,6 +36872,17 @@ $(document).ready(function () {
     $('.centre-checkbox').attr('checked', false);
   });
 });
+
+function checkWidth(init) {
+  /*If browser resized, check width again */
+  if ($(window).width() < 514) {
+    $('.table-responsive-sm').addClass('table-sm');
+  } else {
+    if (!init) {
+      $('.table-responsive-sm').removeClass('table-sm');
+    }
+  }
+}
 
 /***/ }),
 

@@ -1,4 +1,10 @@
 $(document).ready(() => {
+    checkWidth(true);
+
+    $(window).resize(function() {
+        checkWidth(false);
+    });
+
     //Login and Register
     $('#login-form-link').click((event) => {
         $("#login-form").delay(100).fadeIn(100);
@@ -34,3 +40,14 @@ $(document).ready(() => {
         $('.centre-checkbox').attr('checked', false);
     });
 });
+
+function checkWidth(init) {
+    /*If browser resized, check width again */
+    if ($(window).width() < 514) {
+        $('.table-responsive-sm').addClass('table-sm');
+    } else {
+        if (!init) {
+            $('.table-responsive-sm').removeClass('table-sm');
+        }
+    }
+}
