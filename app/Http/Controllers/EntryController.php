@@ -106,6 +106,12 @@ class EntryController extends Controller {
             return back()->with('failure', 'This user has not been assigned a centre, please have a super admin set you up');
         }
 
+        $entry = Entry::where('user_id', $user->id)->where('out_time', null)->first();
+        if ($entry) {
+            /** @var Entry $entry */
+            $this->update($request, $entry);
+        }
+
         $entry = new Entry;
         $entry->user_id = $user->id;
         $entry->centre_id = $centre->id;
