@@ -19,12 +19,17 @@ password: secret
 <strong>*Questions :*</strong>  <br>
 *How did you approach this challenge?*   <br>
 &nbsp;&nbsp;&nbsp;I began by trying to put myself in a real situation where I might be an administrator at HiMama, an administrator at a daycare or a teacher at a daycare. Given those roles, I imagined what the day-to-day scenarios might be like.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- As a teacher: I would need a very quick and simple way to clock in and clock out without worrying about too many details, and taking too much time out of my day. <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - As a daycare administrator: I would like to see (/create and edit) all the teachers at my daycare, as well as see all of their timelogs.  <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- As a HiMama administrator: I would like to see all the timelogs, by all the teachers, at all of the daycares.  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- As a teacher: I would need a very quick and simple way to clock in and clock out without worrying about too many details, and taking too much time out of my day. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- As a daycare administrator: I would like to see (/create and edit) all the teachers at my daycare, as well as see all of their timelogs.  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- As a HiMama administrator: I would like to see all the timelogs, by all the teachers, at all of the daycares.  <br>
 <br>
-I then started thinking about the CRUD functionality for each user, centre and timelog entry, answering questions such as:  
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+I then started thinking about the CRUD functionality for each user, centre and timelog entry, answering questions such as:
+   
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 - How are users created: anyone can create their own accounts, or admin can create accounts for them.  <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 - How are teachers assigned to centres: at registration, they can select their daycare, or an admin can assign them. <br>  
@@ -38,9 +43,11 @@ I then started thinking about the CRUD functionality for each user, centre and t
 - How is a clock-out entry created: check if an entry for this teacher has been created with a valid in time where 'out time’ is null. Update it with the current time as 'out time' and the total.   <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 - What if they were not clocked in yet: Error message telling them they either haven’t clocked in, or they are trying to clock-in instead of out. 
+   
 <br>
 <br>
-*What schema design did you choose and why* <br>
+    
+* What schema design did you choose and why* <br>
     *Please see the tables structure below.*
 <br>
 &nbsp;&nbsp;&nbsp;
@@ -49,16 +56,18 @@ I then started thinking about the CRUD functionality for each user, centre and t
 &nbsp;&nbsp;&nbsp;
     I decided to store the timestamps for entries as unix timestamps to be consider the clock-in and clock-out times of teachers in their own timezones.   
  
+<br>   
+   
+* If you were given another day to work on this, how would you spend it? What if you were
+given a month? *   
+
 <br>    
-*If you were given another day to work on this, how would you spend it? What if you were
-given a month?* 
-<br>
     *Please also see the 'Functionality To Come in due time' section below.* 
-    <br>
+    <br>   
 &nbsp;&nbsp;&nbsp;
 If given another day to work on this I would add more functionality to the user and centre controllers. I would want the ability to update a centre’s address, name or timezone, or to delete the centre all together. I would also like to allow users to update their personal information such as usernames, or change their passwords. This would be quite similar to how we currently deal with the existing models, it’s simply a matter of adding the front end functionality. 
-<br>
-&nbsp;&nbsp;&nbsp;
+<br>   
+&nbsp;&nbsp;&nbsp; 
 If given a month, I would like to add functionality to the whole system, starting with location data. If we know what location the teacher is clocking in from, we can cover the need to block teachers from clocking in at centres to which they aren’t necessarily pre-assigned. Additionally, I would add statistics based on teachers working hours, adding the ability for an admin to search for a teacher and filter their hours worked by day, month or year. I would include specifics about their average starting time, ending time and hours worked.
 <br>
 <br>
