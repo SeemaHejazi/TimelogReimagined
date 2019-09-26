@@ -206,6 +206,16 @@
                                     @endforeach
                                 </select>
                             </div>
+                            * A centre must be assigned to begin with
+                            <div class="input-group">
+                                <select class="input-field form-control" name="role_id" title="role">
+                                    @foreach($centres as $centre)
+                                        <option value="{{ $centre->id }}">
+                                            {{ $centre->centre_name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="button-holder">
                                 <button type="submit" class="button">{{ __('Register') }}</button>
                             </div>

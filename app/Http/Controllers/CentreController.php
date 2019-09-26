@@ -8,26 +8,6 @@ use Illuminate\Http\Request;
 
 class CentreController extends Controller {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index() {
-        $centres = Centre::order_by('centre_name', 'asc')->get();
-
-//        return view('', compact('centers'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        // Not needed
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -55,26 +35,6 @@ class CentreController extends Controller {
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) {
-        // Todo: Return to this page
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id) {
-        // Not needed
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -82,7 +42,7 @@ class CentreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        // Not needed
+        // Todo: update centre info
     }
 
     /**
@@ -92,6 +52,6 @@ class CentreController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        // Todo: delete centres safly considering the assignements made
     }
 }

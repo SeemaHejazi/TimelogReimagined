@@ -100,9 +100,15 @@ class EntryController extends Controller {
             return $this->update($request, $entry);
         }
 
+        $centre = $user->centres->first();
+
+        if (!$centre) {
+            return back()->with('failure', 'This user has not been assigned a centre, please have a super admin set you up');
+        }
+
         $entry = new Entry;
         $entry->user_id = $user->id;
-        $entry->centre_id = $user->centres->first()->id;
+        $entry->centre_id = $centre->id;
         $entry->in_time = Carbon::now()->getTimestamp();
 
         $entry->save();
@@ -149,6 +155,7 @@ class EntryController extends Controller {
      * @return Response
      */
     public function destroy($id) {
+        // Todo: add front end to this function, consider who has the power to delete entries
         $entry = Entry::find($id);
 
         //Delete Entry
