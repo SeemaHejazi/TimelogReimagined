@@ -107,8 +107,8 @@ timezone    | VARCHAR | America/Chicago
 
 Column | Type | Example
 ------------ | ------------- | -------------
-user_id | INT (FK: User) | #
-centre_id   | INT (FK: Centre) | #
+user_id | INT (FK: User) | 3 -> 'snorbury'
+centre_id   | INT (FK: Centre) | 1 -> 'North Shore Daycare'
 
 
 *Entries:*
@@ -116,11 +116,11 @@ centre_id   | INT (FK: Centre) | #
 Column | Type | Example
 ------------ | ------------- | -------------
 id         | INT     | #
-user_id    | INT (FK: User) | #
-centre_id  | INT (FK: Centre) | #
-in_time    | BIGINT: Unix timestamp secs | consideration for managing centres across the country... or WORLD
-out_time   | BIGINT: Unix timestamp secs |
-total      | BIGINT | total time worked in secs
+user_id    | INT (FK: User) | 3 -> 'snorbury'
+centre_id  | INT (FK: Centre) | 1 -> 'North Shore Daycare'
+in_time    | BIGINT: Unix timestamp secs | 1569330000 (consideration for managing centres across the country... or WORLD)
+out_time   | BIGINT: Unix timestamp secs | 1569337200
+total      | BIGINT | 7200 (total time worked in secs)
 
 
 <strong>*If you were given another day to work on this, how would you spend it? What if you were
