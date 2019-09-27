@@ -10,14 +10,14 @@ use Carbon\Carbon;
 /**
  * App\Models\Entry
  *
- * @property int $id
- * @property int $user_id
- * @property int $centre_id
- * @property int $in_time
- * @property int|null $out_time
- * @property int|null $total
+ * @property int                     $id
+ * @property int                     $user_id
+ * @property int                     $centre_id
+ * @property int                     $in_time
+ * @property int|null                $out_time
+ * @property int|null                $total
  * @property-read \App\Models\Centre $centre
- * @property-read \App\Models\User $user
+ * @property-read \App\Models\User   $user
  * @method static Builder|\App\Models\Entry newModelQuery()
  * @method static Builder|\App\Models\Entry newQuery()
  * @method static Builder|\App\Models\Entry query()
@@ -99,15 +99,16 @@ class Entry extends Model {
         if ($this->total == null) {
             return null;
         }
-        if ($this->total < 3600) {
-            return gmdate('i', $this->total) . ' mins';
-        }
 
-        return gmdate('h : i', $this->total) . ' hours';
+        $init = $this->total;
+        $hours = floor($init / 3600);
+        $minutes = floor(($init / 60) % 60);
+
+        return $hours . ' h ' . $minutes . ' mins';
     }
 
     public function getInTimeAttribute($utc) {
-        $timezone =$this->centre->timezone;
+        $timezone = $this->centre->timezone;
 
         return Carbon::createFromTimestamp($utc, $timezone)->format('M d, y h:i A');
     }
@@ -117,7 +118,7 @@ class Entry extends Model {
             return $utc;
         }
 
-        $timezone =$this->centre->timezone;
+        $timezone = $this->centre->timezone;
 
         return Carbon::createFromTimestamp($utc, $timezone)->format('M d, y h:i A');
     }
